@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/evalua_graph"
+    app:startDestination="@id/evaluaMainFragment">
+
+    <fragment
+        android:id="@+id/evaluaMainFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeFragmentNav.EvaluaMainFragment"
+        android:label="EvaluaMainFragment"
+        tools:layout="@layout/fragment_evalua_main">
+        <action
+            android:id="@+id/action_evaluaMainFragment_to_evaluaFragment"
+            app:destination="@id/evaluaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/evaluaFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentEvaluaNav.EvaluaFragment"
+        android:label="EvaluaFragment"
+        tools:layout="@layout/fragment_evalua3"/>
+</navigation>

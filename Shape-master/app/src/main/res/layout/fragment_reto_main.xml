@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:gravity="center"
+    android:orientation="horizontal"
+    >
+
+    <Button
+        android:id="@+id/arrow_left"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/gray"
+        android:drawableLeft="@drawable/arrow_left"
+        android:paddingBottom="350dp"
+        android:text=""
+        android:paddingLeft="0dp"
+        android:stateListAnimator="@null"
+        tools:ignore="RtlHardcoded" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <Button
+            android:id="@+id/arrow_back"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/gray"
+            android:contentDescription=""
+            android:drawableLeft="@drawable/arrow_back_black"
+            android:text=""
+            android:elevation="0dp"
+            android:stateListAnimator="@null"
+            tools:ignore="RtlHardcoded" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagenReto"
+            android:layout_width="290dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,1:1"
+            android:src="@android:drawable/sym_def_app_icon"
+            app:shapeAppearanceOverlay="@style/radius" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/tituloReto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/categor_a"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="6dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/nombreCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/duraci_n"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="6dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/duracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/objetivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/objectivo"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <Space
+                android:layout_width="6dp"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beneficios"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <TextView
+            android:id="@+id/beneficio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beneficios"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/beneficio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beneficios"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/beneficio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beneficios"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/beneficio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beneficios"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/botonAceptarReto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="12dp"
+            android:backgroundTint="@color/blue"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:text="@string/aceptar_el_reto" />
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/arrow_right"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/gray"
+        android:paddingBottom="350dp"
+        android:contentDescription=""
+        android:drawableLeft="@drawable/arrow_right"
+        android:elevation="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:stateListAnimator="@null"
+        android:text=""
+        tools:ignore="RtlHardcoded" />
+
+
+</LinearLayout>

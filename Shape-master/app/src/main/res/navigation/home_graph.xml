@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_grapg"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.shackleton.shape.view.home.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment4"
+            app:destination="@id/profileFragment4" />
+        <action
+            android:id="@+id/action_homeFragment_to_projectFragment4"
+            app:destination="@id/projectFragment4" />
+        <action
+            android:id="@+id/action_homeFragment_to_socialFragment2"
+            app:destination="@id/socialFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment3"
+            app:destination="@id/searchFragment3" />
+        <action
+            android:id="@+id/action_homeFragment_to_subvencionesActivity"
+            app:destination="@id/subvencionesActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_lienzosActivity"
+            app:destination="@id/lienzosActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_networkingActivity"
+            app:destination="@id/networkingActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_inspirateBinding"
+            app:destination="@id/inspirateBinding" />
+        <action
+            android:id="@+id/action_homeFragment_to_evaluaActivity"
+            app:destination="@id/evaluaActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_herramientasActivity"
+            app:destination="@id/herramientasActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_mindfullnesActivity"
+            app:destination="@id/mindfullnesActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_retoActivity"
+            app:destination="@id/retoActivity" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/socialFragment2"
+            android:name="com.shackleton.shape.view.home.fragment.SocialFragment"
+            android:label="fragment_social"
+            tools:layout="@layout/fragment_social" >
+            <action
+                android:id="@+id/action_socialFragment2_to_projectFragment4"
+                app:destination="@id/projectFragment4" />
+            <action
+                android:id="@+id/action_socialFragment2_to_profileFragment4"
+                app:destination="@id/profileFragment4" />
+            <action
+                android:id="@+id/action_socialFragment2_to_searchFragment3"
+                app:destination="@id/searchFragment3" />
+            <action
+                android:id="@+id/action_socialFragment2_to_homeFragment"
+                app:destination="@id/homeFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/searchFragment3"
+            android:name="com.shackleton.shape.view.home.fragment.SearchFragment"
+            android:label="fragment_seach"
+            tools:layout="@layout/fragment_seach" >
+            <action
+                android:id="@+id/action_searchFragment3_to_socialFragment2"
+                app:destination="@id/socialFragment2" />
+            <action
+                android:id="@+id/action_searchFragment3_to_profileFragment4"
+                app:destination="@id/profileFragment4" />
+            <action
+                android:id="@+id/action_searchFragment3_to_projectFragment4"
+                app:destination="@id/projectFragment4" />
+            <action
+                android:id="@+id/action_searchFragment3_to_homeFragment"
+                app:destination="@id/homeFragment" />
+            <action
+                android:id="@+id/action_searchFragment3_to_userSelectedFragment"
+                app:destination="@id/userSelectedFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/profileFragment4"
+            android:name="com.shackleton.shape.view.home.fragment.ProfileFragment"
+            android:label="fragment_profile"
+            tools:layout="@layout/fragment_profile" >
+            <action
+                android:id="@+id/action_profileFragment4_to_socialFragment2"
+                app:destination="@id/socialFragment2" />
+            <action
+                android:id="@+id/action_profileFragment4_to_searchFragment3"
+                app:destination="@id/searchFragment3" />
+            <action
+                android:id="@+id/action_profileFragment4_to_homeFragment"
+                app:destination="@id/homeFragment" />
+            <action
+                android:id="@+id/action_profileFragment4_to_projectFragment42"
+                app:destination="@id/projectFragment4" />
+
+            <action
+                android:id="@+id/action_profileFragment4_to_changePasswordActivity"
+                app:destination="@id/changePasswordActivity" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/projectFragment4"
+            android:name="com.shackleton.shape.view.home.fragment.ProjectFragment"
+            android:label="fragment_project"
+            tools:layout="@layout/fragment_project" >
+            <action
+                android:id="@+id/action_projectFragment4_to_socialFragment2"
+                app:destination="@id/socialFragment2" />
+            <action
+                android:id="@+id/action_projectFragment4_to_profileFragment4"
+                app:destination="@id/profileFragment4" />
+            <action
+                android:id="@+id/action_projectFragment4_to_searchFragment3"
+                app:destination="@id/searchFragment3" />
+            <action
+                android:id="@+id/action_projectFragment4_to_homeFragment"
+                app:destination="@id/homeFragment" />
+            <action
+                android:id="@+id/action_projectFragment4_to_searchFragment32"
+                app:destination="@id/searchFragment3" />
+            <action
+                android:id="@+id/action_projectFragment4_to_profileFragment42"
+                app:destination="@id/profileFragment4" />
+            <action
+                android:id="@+id/action_projectFragment4_to_timelineFragment2"
+                app:destination="@id/timelineFragment2" />
+        </fragment>
+    <activity
+        android:id="@+id/evaluaActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.EvaluaActivity"
+        android:label="EvaluaActivity"
+        tools:layout="@layout/activity_evalua"/>
+    <activity
+        android:id="@+id/inspirateBinding"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.InspirateActivity"
+        android:label="InspirateBinding"
+        tools:layout="@layout/activity_inspirate_binding"/>
+    <activity
+        android:id="@+id/lienzosActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.LienzosActivity"
+        android:label="LienzosActivity"
+        tools:layout="@layout/activity_lienzos"/>
+    <activity
+        android:id="@+id/networkingActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.NetworkingActivity"
+        android:label="NetworkingActivity"
+        tools:layout="@layout/activity_networking"/>
+    <activity
+        android:id="@+id/subvencionesActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.SubvencionesActivity"
+        android:label="SubvencionesActivity"
+        tools:layout="@layout/activity_subvenciones"/>
+    <activity
+        android:id="@+id/retoActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.RetoActivity"
+        android:label="RetoActivity"
+        tools:layout="@layout/activity_reto"/>
+    <activity
+        android:id="@+id/mindfullnesActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.MindfullnesActivity"
+        android:label="MindfullnesActivity"
+        tools:layout="@layout/activity_mindfullnes"/>
+    <activity
+        android:id="@+id/herramientasActivity"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.HerramientasActivity"
+        android:label="HerramientasActivity"
+        tools:layout="@layout/activity_herramientas"/>
+    <activity
+        android:id="@+id/changePasswordActivity"
+        android:name="com.shackleton.shape.view.settings.ChangePasswordActivity"
+        android:label="ChangePasswordActivity"
+        tools:layout="@layout/activity_change_password"/>
+    <fragment
+        android:id="@+id/timelineFragment2"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentProjectNav.TimelineFragment"
+        android:label="fragment_timeline"
+        tools:layout="@layout/fragment_timeline" >
+        <argument android:name="parameters"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_timelineFragment2_to_lienzoSelectedFragment3"
+            app:destination="@id/lienzoSelectedFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/lienzoSelectedFragment3"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentLienzosNav.LienzoSelectedFragment"
+        android:label="fragment_lienzo_selected"
+        tools:layout="@layout/fragment_lienzo_selected" >
+        <argument android:name="parameters"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSelectedFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentSearchNav.UserSelectedFragment"
+        android:label="UserSelectedFragment" >
+        <argument android:name="parameter"
+            app:argType="string[]" />
+    </fragment>
+
+</navigation>

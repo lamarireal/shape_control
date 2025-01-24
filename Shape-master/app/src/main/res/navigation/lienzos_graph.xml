@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lienzos_graph"
+    app:startDestination="@id/lienzosMainFragment">
+
+    <fragment
+        android:id="@+id/lienzosMainFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeFragmentNav.LienzosMainFragment"
+        android:label="LienzosMainFragment"
+        tools:layout="@layout/fragment_lienzos_main">
+        <action
+            android:id="@+id/action_lienzosMainFragment_to_lienzoSelectedFragment"
+            app:destination="@id/lienzoSelectedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lienzoSelectedFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentLienzosNav.LienzoSelectedFragment"
+        android:label="fragment_lienzo_selected"
+        tools:layout="@layout/fragment_lienzo_selected" >
+        <argument
+            android:name="parameters"
+            app:argType="string[]" />
+    </fragment>
+</navigation>

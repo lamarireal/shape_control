@@ -1,0 +1,62 @@
+<!-- list_item_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/round"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pregunta" />
+
+    <RadioGroup
+        android:id="@+id/answersRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/answer1RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Respuesta 1" />
+
+        <RadioButton
+            android:id="@+id/answer2RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Respuesta 2" />
+
+        <RadioButton
+            android:id="@+id/answer3RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Respuesta 3" />
+
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/adapter_card2"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="5dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@string/verificar_respuestas"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:cornerRadius="12dp"
+            android:backgroundTint="@color/blue" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_evalua3"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mensajeBienvenida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/titulo2"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="@string/preg1" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:background="@drawable/round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="@string/preg2" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:background="@drawable/round"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="@string/preg3" />
+
+        <Switch
+            android:id="@+id/switch3"
+            android:background="@drawable/round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            tools:ignore="TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="@string/qu_mejorar_as_de_este_producto" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/round"
+            android:ems="10"
+            android:hint="Escribe las mejoras que le harías a este producto"
+            android:inputType="text"
+            android:textSize="15sp"
+            tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="12dp"
+            android:text="Enviar"
+            android:backgroundTint="@color/blue"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+</FrameLayout>

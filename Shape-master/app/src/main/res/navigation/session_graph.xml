@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/session_graph"
+    app:startDestination="@id/main2">
+
+    <fragment
+        android:id="@+id/main2"
+        android:name="com.shackleton.shape.view.session.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main2_to_logIn"
+            app:destination="@id/logIn" />
+        <action
+            android:id="@+id/action_main2_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_main2_to_mainHome"
+            app:destination="@id/mainHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/logIn"
+        android:name="com.shackleton.shape.view.session.fragment.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logIn_to_mainHome"
+            app:destination="@id/mainHome" />
+        <action
+            android:id="@+id/action_logIn_to_forgotPasswordActivity"
+            app:destination="@id/forgotPasswordActivity" />
+        <action
+            android:id="@+id/action_logIn_to_finishRegisterFragment"
+            app:destination="@id/finishRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.shackleton.shape.view.session.fragment.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_finishRegisterFragment"
+            app:destination="@id/finishRegisterFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainHome"
+        android:name="com.shackleton.shape.view.home.MainHome"
+        android:label="activity_main_home"
+        tools:layout="@layout/activity_main_home" />
+    <activity
+        android:id="@+id/forgotPasswordActivity"
+        android:name="com.shackleton.shape.view.settings.ForgotPasswordActivity"
+        android:label="ForgotPasswordActivity"
+        tools:layout="@layout/activity_forgot_password"/>
+    <fragment
+        android:id="@+id/finishRegisterFragment"
+        android:name="com.shackleton.shape.view.session.fragment.FinishRegisterFragment"
+        android:label="FinishRegisterFragment" >
+        <action
+            android:id="@+id/action_finishRegisterFragment_to_logIn"
+            app:destination="@id/logIn" />
+    </fragment>
+
+
+</navigation>

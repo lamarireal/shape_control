@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inspirate_graph"
+    app:startDestination="@id/inspirateMainFragment">
+
+    <fragment
+        android:id="@+id/inspirateMainFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeFragmentNav.InspirateMainFragment"
+        android:label="InspirateMainFragment"
+        tools:layout="@layout/fragment_inspirate_main">
+        <action
+            android:id="@+id/action_inspirateMainFragment_to_podcastFragment"
+            app:destination="@id/podcastFragment" />
+        <action
+            android:id="@+id/action_inspirateMainFragment_to_succesCasesFragment"
+            app:destination="@id/succesCasesFragment" />
+        <action
+            android:id="@+id/action_inspirateMainFragment_to_phraseFragment"
+            app:destination="@id/phraseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/podcastFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentInspirateNav.PodcastFragment"
+        android:label="PodcastFragment"
+        tools:layout="@layout/fragment_podcast"/>
+    <fragment
+        android:id="@+id/succesCasesFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentInspirateNav.SuccesCasesFragment"
+        android:label="SuccesCasesFragment"
+        tools:layout="@layout/fragment_succes_cases"/>
+    <fragment
+        android:id="@+id/phraseFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentInspirateNav.PhraseFragment"
+        android:label="PhraseFragment"
+        tools:layout="@layout/fragment_phrase"/>
+</navigation>

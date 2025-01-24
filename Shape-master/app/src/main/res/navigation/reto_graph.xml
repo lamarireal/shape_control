@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reto_graph"
+    app:startDestination="@id/retoMainFragment">
+
+    <fragment
+        android:id="@+id/retoMainFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeFragmentNav.RetoMainFragment"
+        android:label="RetoMainFragment"
+        tools:layout="@layout/fragment_reto_main">
+        <action
+            android:id="@+id/action_retoMainFragment_to_bibliotecaFragment2"
+            app:destination="@id/bibliotecaFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/bibliotecaFragment2"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentRetoNav.BibliotecaFragment"
+        android:label="BibliotecaFragment"
+        tools:layout="@layout/fragment_biblioteca">
+        <action
+            android:id="@+id/action_bibliotecaFragment2_to_librosFragment"
+            app:destination="@id/librosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/librosFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentRetoNav.LibrosFragment"
+        android:label="LibrosFragment"
+        tools:layout="@layout/fragment_libros">
+        <action
+            android:id="@+id/action_librosFragment_to_preguntasFragment"
+            app:destination="@id/preguntasFragment" />
+        <argument android:name="resumen"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/preguntasFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.fragmentRetoNav.PreguntasFragment"
+        android:label="PreguntasFragment"
+        tools:layout="@layout/fragment_preguntas">
+        <argument
+            android:name="title"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_preguntasFragment_to_bibliotecaFragment2"
+            app:destination="@id/bibliotecaFragment2" />
+    </fragment>
+</navigation>
