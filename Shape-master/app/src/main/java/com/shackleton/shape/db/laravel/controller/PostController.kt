@@ -68,7 +68,7 @@ class PostController {
             })
     }
 
-    /*fun getAllPostsFromUser(callback: (List<com.shackleton.shape.db.laravel.model.Post>?) -> Unit){
+  /*  fun getAllPostsFromUser(callback: (List<com.shackleton.shape.db.laravel.model.Post>?) -> Unit){
         com.shackleton.shape.db.laravel.request.openConnection()
             .create(PostAPI::class.java).getPostsFromUser(
                 com.shackleton.shape.db.laravel.request.getAuthHeader()

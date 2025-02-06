@@ -7,10 +7,14 @@ import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
+
+
+
 fun openConnection() : Retrofit {
 
     return Retrofit.Builder()
-        .baseUrl("http://192.168.0.21:8001/")
+        .baseUrl("http://10.0.2.2:8000/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
@@ -28,7 +32,7 @@ fun openConnectionWithAuth() : Retrofit {
         .build()
 
     return Retrofit.Builder()
-        .baseUrl("http://192.168.0.21:8001/")
+        .baseUrl("http://10.0.2.2:8000/") //
         .addConverterFactory(GsonConverterFactory.create())
         .client(httpClient)
         .build()
