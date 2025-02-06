@@ -14,7 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 fun openConnection() : Retrofit {
 
     return Retrofit.Builder()
+<<<<<<< Updated upstream
         .baseUrl("http://10.0.2.2:8000/")
+=======
+        .baseUrl("http://10.0.2.2:8000")
+>>>>>>> Stashed changes
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
@@ -32,7 +36,11 @@ fun openConnectionWithAuth() : Retrofit {
         .build()
 
     return Retrofit.Builder()
+<<<<<<< Updated upstream
         .baseUrl("http://10.0.2.2:8000/") //
+=======
+        .baseUrl("http://10.0.2.2:8000")
+>>>>>>> Stashed changes
         .addConverterFactory(GsonConverterFactory.create())
         .client(httpClient)
         .build()
