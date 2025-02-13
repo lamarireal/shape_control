@@ -14,6 +14,12 @@ class SubvencionesActivity : AppCompatActivity() {
         binding = ActivitySubvencionesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.arrowBack.setOnClickListener {
+            finish() // Cierra la actividad y vuelve a la anterior
+        }
+
+
+
         binding.recyclerSubvenciones.adapter = SubvencionesAdapter(cargarList())
 
     }

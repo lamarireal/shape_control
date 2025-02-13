@@ -35,7 +35,20 @@ class LogInFragment : Fragment() {
             findNavController().navigate(LogInFragmentDirections.actionLogInToForgotPasswordActivity())
         }
 
+
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()  // Vuelve a la pantalla anterior
+        }
+
+
+
+
+
         return binding.root
     }
+
+
+
+
 
 }

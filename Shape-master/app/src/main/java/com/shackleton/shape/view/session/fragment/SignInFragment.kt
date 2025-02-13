@@ -41,6 +41,16 @@ class SignInFragment : Fragment() {
                 userController.registerUser(name, nick, email, password, cPassword, binding.root)
             }
         }
+
+
+
+
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()  // Vuelve a la pantalla anterior
+        }
+
+
+
         return binding.root
     }
     private fun setSpinner(){

@@ -12,5 +12,10 @@ class EvaluaActivity : AppCompatActivity() {
         binding = ActivityEvaluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.arrowBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()  // Vuelve a la pantalla anterior
+        }
+
+
     }
 }

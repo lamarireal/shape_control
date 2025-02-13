@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/activity_herramientas"
-    >
-
+    android:id="@+id/activity_herramientas">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +12,6 @@
         android:orientation="vertical"
         android:paddingHorizontal="15dp"
         android:paddingTop="30dp">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,19 +31,19 @@
                 android:layout_height="wrap_content" />
 
             <ImageButton
+                android:id="@+id/arrow_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/white"
-                android:contentDescription=""
+                android:contentDescription="atr"
                 android:src="@drawable/arrow_back_black" />
-
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,7 +66,7 @@
 
                 <Space
                     android:layout_width="10dp"
-                    android:layout_height="0dp"/>
+                    android:layout_height="0dp" />
 
                 <Button
                     android:id="@+id/desing"
@@ -78,9 +75,7 @@
                     android:backgroundTint="@color/black"
                     app:cornerRadius="12dp"
                     android:textAllCaps="false"
-                    android:text="@string/dise_o"
-                    />
-
+                    android:text="@string/dise_o" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,7 +94,7 @@
 
                 <Space
                     android:layout_width="10dp"
-                    android:layout_height="0dp"/>
+                    android:layout_height="0dp" />
 
                 <Button
                     android:id="@+id/proto"
@@ -108,11 +103,8 @@
                     android:backgroundTint="@color/black"
                     app:cornerRadius="12dp"
                     android:textAllCaps="false"
-                    android:text="@string/prototipado"
-                    />
-
+                    android:text="@string/prototipado" />
             </LinearLayout>
-
 
             <Button
                 android:id="@+id/project"
@@ -121,26 +113,19 @@
                 android:backgroundTint="@color/black"
                 app:cornerRadius="12dp"
                 android:textAllCaps="false"
-                android:text="@string/gesti_n_de_proyectos"
-                />
-
+                android:text="@string/gesti_n_de_proyectos" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp"/>
+            android:layout_height="15dp" />
 
         <LinearLayout
             android:id="@+id/contenedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-
-        </LinearLayout>
+            android:orientation="vertical" />
 
     </LinearLayout>
-
 
 </ScrollView>

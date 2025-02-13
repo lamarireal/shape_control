@@ -13,6 +13,10 @@ class InspirateActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+
+
+
     }
 
 }

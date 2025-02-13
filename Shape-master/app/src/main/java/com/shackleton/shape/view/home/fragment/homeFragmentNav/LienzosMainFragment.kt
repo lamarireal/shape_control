@@ -23,6 +23,12 @@ class LienzosMainFragment : Fragment() {
 
         binding.recyclerLienzos.adapter = LienzosAdapter(cargarList())
 
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed() // Vuelve al fragmento anterior
+        }
+
+
+
         return binding.root
     }
 

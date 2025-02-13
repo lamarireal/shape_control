@@ -23,6 +23,12 @@ class InspirateMainFragment : Fragment() {
         _binding = FragmentInspirateMainBinding.inflate(inflater, container, false)
         binding.recyclerInspirate.adapter = InspirateAdapter(cargarList(), binding.root.rootView)
 
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
+
+
         return binding.root
     }
     private fun cargarList(): List<Inspirate> {

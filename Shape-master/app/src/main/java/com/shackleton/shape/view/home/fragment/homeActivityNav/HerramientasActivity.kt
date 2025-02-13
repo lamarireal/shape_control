@@ -40,6 +40,14 @@ class HerramientasActivity : AppCompatActivity() {
 
 
         //Acciones de los botones
+
+        binding.arrowBack.setOnClickListener {
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
+
+
+
+
         binding.btnIA.setOnClickListener {
             removerVistas()
 

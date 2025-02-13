@@ -32,6 +32,15 @@ class FinishRegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
+
+
+
         binding.terms.setOnClickListener {
             val builder = AlertDialog.Builder(view.context)
             builder.setTitle("Términos y condiciones")
@@ -39,6 +48,10 @@ class FinishRegisterFragment : Fragment() {
             val dialog = builder.create()
             dialog.show()
         }
+
+
+
+
 
         binding.registerBtnEnter.setOnClickListener {
             openConnection().create(UserApi::class.java)

@@ -14,6 +14,10 @@ class MindfullnesActivity : AppCompatActivity() {
         binding = ActivityMindfullnesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+
+
         binding.recyclerMindfullnes.adapter = MindfullnesAdapter(cargarList())
 
     }
