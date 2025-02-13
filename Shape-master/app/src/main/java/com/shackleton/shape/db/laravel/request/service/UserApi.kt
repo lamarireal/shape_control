@@ -1,6 +1,7 @@
 package com.shackleton.shape.db.laravel.request.service
 
 import com.shackleton.shape.db.laravel.model.User
+import com.shackleton.shape.db.laravel.request.response.CheckResponse
 import com.shackleton.shape.db.laravel.request.response.GeneralListResponse
 import com.shackleton.shape.db.laravel.request.response.GeneralListResponse2
 import com.shackleton.shape.db.laravel.request.response.GeneralResponse
@@ -44,6 +45,13 @@ interface UserApi {
         @Field("password") password: String,
         @Field("password_confirmation") password_confirmation: String,
     ) : Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("api/checkNickAndEmail")
+    fun checkNickAndEmail(
+        @Field("nick") nick: String,
+        @Field("email") email: String
+    ): Call<CheckResponse>
 
     @FormUrlEncoded
     @POST("api/update_full_name")
