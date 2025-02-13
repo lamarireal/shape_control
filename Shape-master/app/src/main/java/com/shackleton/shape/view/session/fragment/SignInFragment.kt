@@ -38,7 +38,11 @@ class SignInFragment : Fragment() {
 
             if (name.isNotEmpty() && nick.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && cPassword.isNotEmpty()){
                 Toast.makeText(requireContext(),"Revise su email para la verificacion", Toast.LENGTH_SHORT).show()
-                userController.registerUser(name, nick, email, password, cPassword, binding.root)
+                userController.registerUser(name, nick, email, password, cPassword, binding.root) {
+                    Toast.makeText(requireContext(), "Error al registrar usuario", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
 
