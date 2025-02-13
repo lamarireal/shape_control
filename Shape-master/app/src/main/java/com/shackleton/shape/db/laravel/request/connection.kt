@@ -7,23 +7,14 @@ import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-
-
-
-fun openConnection() : Retrofit {
-
+fun openConnection(): Retrofit {
     return Retrofit.Builder()
-<<<<<<< Updated upstream
         .baseUrl("http://10.0.2.2:8000/")
-=======
-        .baseUrl("http://10.0.2.2:8000")
->>>>>>> Stashed changes
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
 
-fun openConnectionWithAuth() : Retrofit {
+fun openConnectionWithAuth(): Retrofit {
     val interceptor = Interceptor { chain ->
         val request: Request = chain.request().newBuilder()
             .addHeader("Authorization", getAuthHeader())
@@ -36,11 +27,7 @@ fun openConnectionWithAuth() : Retrofit {
         .build()
 
     return Retrofit.Builder()
-<<<<<<< Updated upstream
-        .baseUrl("http://10.0.2.2:8000/") //
-=======
-        .baseUrl("http://10.0.2.2:8000")
->>>>>>> Stashed changes
+        .baseUrl("http://10.0.2.2:8000/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(httpClient)
         .build()
@@ -49,4 +36,3 @@ fun openConnectionWithAuth() : Retrofit {
 fun getAuthHeader(): String {
     return "Bearer " + SharedApp.preferences.session
 }
-
