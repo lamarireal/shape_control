@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.shackleton.shape.databinding.FragmentFinishRegisterBinding
@@ -56,7 +57,7 @@ class FinishRegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(FinishRegisterViewModel::class.java)
+        viewModel = ViewModelProvider(this)[FinishRegisterViewModel::class.java]
 
         viewModel.response.observe(viewLifecycleOwner) { isSuccess ->
             binding.progressBar.visibility = View.GONE
@@ -67,26 +68,20 @@ class FinishRegisterFragment : Fragment() {
             } else {
                 Toast.makeText(requireContext(), "Error!", Toast.LENGTH_SHORT).show()
             }
-
+        }
 
         binding.arrowBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
-
-
-
         binding.terms.setOnClickListener {
-            val builder = AlertDialog.Builder(view.context)
+            val builder = AlertDialog.Builder(requireContext())
             builder.setTitle("Términos y condiciones")
-            builder.setMessage("  ")
+            builder.setMessage("Aquí должны быть реальные условия использования.")
+            builder.setPositiveButton("OK", null)
             val dialog = builder.create()
             dialog.show()
         }
-
-
-
-
 
         binding.registerBtnEnter.setOnClickListener {
             val code = binding.codigo.text.toString().trim()
