@@ -25,25 +25,30 @@ class UserController {
         }
 
         openConnection()
-            .create(UserApi::class.java).login(email, password)
+            .create(UserApi::class.java)
+            .login(email, password)
             .enqueue(object : Callback<GeneralResponse> {
                 override fun onResponse(call: Call<GeneralResponse>, response: Response<GeneralResponse>) {
-                    if (response.isSuccessful) {
-                        val sessionResponse = response.body()
-                        if (sessionResponse != null && sessionResponse.access_token != null) {
-                            SharedApp.preferences.session = sessionResponse.access_token
-                            SharedApp.preferences.user = sessionResponse.user
-                            callback()
-                        } else {
-                            errorCallback("Respuesta del servidor no válida")
-                        }
-                    } else {
-                        errorCallback("Error en la autenticación: ${response.message()}")
+                    if (!response.isSuccessful) {
+                        errorCallback("Error en la autenticación: ${response.code()} - ${response.message()}")
+                        return
                     }
+
+                    val sessionResponse = response.body()
+                    if (sessionResponse?.access_token.isNullOrEmpty()) {
+                        errorCallback("Respuesta del servidor no válida o token vacío")
+                        return
+                    }
+
+                    SharedApp.preferences.apply {
+                        session = sessionResponse!!.access_token
+                        user = sessionResponse.user
+                    }
+                    callback()
                 }
 
                 override fun onFailure(call: Call<GeneralResponse>, t: Throwable) {
-                    errorCallback("Error de conexión: ${t.message}")
+                    errorCallback("Error de conexión: ${t.localizedMessage ?: "Desconocido"}")
                 }
             })
     }

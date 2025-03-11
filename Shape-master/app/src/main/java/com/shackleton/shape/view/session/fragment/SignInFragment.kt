@@ -2,6 +2,7 @@ package com.shackleton.shape.view.session.fragment
 
 import android.R
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +37,11 @@ class SignInFragment : Fragment() {
             val password = binding.registerEditTextPassword.text.toString()
             val cPassword = binding.registerEditTextPasswordConfirm.text.toString()
 
-            if (name.isNotEmpty() && nick.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && cPassword.isNotEmpty()){
-                Toast.makeText(requireContext(),"Revise su email para la verificacion", Toast.LENGTH_SHORT).show()
-                userController.registerUser(name, nick, email, password, cPassword, binding.root) {
+            if (name.isNotEmpty() && nick.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && cPassword.isNotEmpty()) {
+                Toast.makeText(requireContext(), "Revise su email para la verificacion", Toast.LENGTH_SHORT).show()
+
+                userController.registerUser(name, nick, email, password, cPassword, binding.root) { errorMessage ->
+                    Log.e("RegisterError", "Error al registrar usuario: $errorMessage")
                     Toast.makeText(requireContext(), "Error al registrar usuario", Toast.LENGTH_SHORT).show()
                 }
             } else {

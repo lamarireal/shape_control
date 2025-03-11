@@ -1,5 +1,8 @@
 @file:Suppress("DEPRECATION")
 
+include(":mylibrary")
+
+
 pluginManagement {
     repositories {
         google {
