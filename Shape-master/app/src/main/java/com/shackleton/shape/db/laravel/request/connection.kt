@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 fun openConnection(): Retrofit {
     return Retrofit.Builder()
-        .baseUrl("https://shapemethod.com/shape-api/public/") // Elegí la opción con "/"
+        .baseUrl("http://10.0.2.2:8000/") // Elegí la opción con "/"
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
@@ -27,7 +27,7 @@ fun openConnectionWithAuth(): Retrofit {
         .build()
 
     return Retrofit.Builder()
-        .baseUrl("https://shapemethod.com/shape-api/public/") // Consistencia en ambos métodos
+        .baseUrl("http://10.0.2.2:8000/") // Consistencia en ambos métodos
         .addConverterFactory(GsonConverterFactory.create())
         .client(httpClient)
         .build()
