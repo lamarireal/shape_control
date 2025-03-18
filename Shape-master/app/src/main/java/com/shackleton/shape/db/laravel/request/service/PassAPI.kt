@@ -10,6 +10,11 @@ import retrofit2.http.POST
 interface PassAPI {
 
     @FormUrlEncoded
-    @POST("api/change_password")
-    fun changepassword(@Header("Authorization") token: String, @Field("current_password") current_password  : String, @Field("password") password  : String ,@Field("password_confirmation") password_confirmation  : String ) : Call<GeneralResponse>
+    @POST("change_password")
+    fun changepassword(
+        @Header("Authorization") token: String,
+        @Field("current_password") current_password: String,
+        @Field("password") password: String,
+        @Field("password_confirmation") password_confirmation: String
+    ): Call<GeneralResponse>
 }
