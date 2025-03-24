@@ -165,7 +165,11 @@ class LienzoSelectedFragment : Fragment() {
     }
     private fun loadStatementLienzoValidacion(): List<Statement> {
         return listOf(
-        )
+
+            Statement("experimento", "", false),
+
+
+            )
     }
     private fun loadStatementLienzoPropuesta(): List<Statement> {
         return listOf(
