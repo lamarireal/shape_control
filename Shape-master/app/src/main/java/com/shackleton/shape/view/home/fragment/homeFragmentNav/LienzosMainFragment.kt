@@ -27,8 +27,6 @@ class LienzosMainFragment : Fragment() {
             requireActivity().onBackPressedDispatcher.onBackPressed() // Vuelve al fragmento anterior
         }
 
-
-
         return binding.root
     }
 
