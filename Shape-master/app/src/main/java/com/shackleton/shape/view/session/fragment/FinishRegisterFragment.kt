@@ -1,5 +1,6 @@
 package com.shackleton.shape.view.session.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -69,40 +70,40 @@ class FinishRegisterFragment : Fragment() {
             }
 
 
-        binding.arrowBack.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
-        }
-
-
-
-
-        binding.terms.setOnClickListener {
-            val builder = AlertDialog.Builder(view.context)
-            builder.setTitle("Términos y condiciones")
-            builder.setMessage("  ")
-            val dialog = builder.create()
-            dialog.show()
-        }
-
-
-
-
-
-        binding.registerBtnEnter.setOnClickListener {
-            val code = binding.codigo.text.toString().trim()
-            if (code.isEmpty()) {
-                Toast.makeText(requireContext(), "Enter the code", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            binding.arrowBack.setOnClickListener {
+                requireActivity().onBackPressedDispatcher.onBackPressed()
             }
 
-            binding.progressBar.visibility = View.VISIBLE
-            binding.registerBtnEnter.isEnabled = false
-            viewModel.finishRegister(code)
+
+
+
+            binding.terms.setOnClickListener {
+                val builder = AlertDialog.Builder(view.context)
+                builder.setTitle("Términos y condiciones")
+                builder.setMessage("  ")
+                val dialog = builder.create()
+                dialog.show()
+            }
+
+
+
+
+
+            binding.registerBtnEnter.setOnClickListener {
+                val code = binding.codigo.text.toString().trim()
+                if (code.isEmpty()) {
+                    Toast.makeText(requireContext(), "Enter the code", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                binding.progressBar.visibility = View.VISIBLE
+                binding.registerBtnEnter.isEnabled = false
+                viewModel.finishRegister(code)
+            }
+        }}
+
+        override fun onDestroyView() {
+            super.onDestroyView()
+            _binding = null
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-}
