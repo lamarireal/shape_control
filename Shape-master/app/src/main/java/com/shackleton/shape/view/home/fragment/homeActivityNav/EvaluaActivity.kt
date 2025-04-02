@@ -13,7 +13,7 @@ class EvaluaActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.arrowBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            onBackPressedDispatcher.onBackPressed()  // Vuelve a la pantalla anterior
         }
 
 

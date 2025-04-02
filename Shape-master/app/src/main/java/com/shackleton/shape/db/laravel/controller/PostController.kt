@@ -27,17 +27,14 @@ class PostController {
                 if (response.isSuccessful) {
                     callback(true)
                 } else {
-                    println("❌ ERROR AL SUBIR POST")
-                    println("Código: ${response.code()}")
-                    println("Mensaje: ${response.message()}")
-                    println("Cuerpo de error: ${response.errorBody()?.string()}")
+                    println("Response not successful: ${response.code()}")
+                    println("Response not successful: ${response.message()}")
                     callback(false)
                 }
             }
 
             override fun onFailure(call: Call<GeneralResponse>, t: Throwable) {
                 println("Error: ${t.message}")
-                t.printStackTrace()
                 callback(false)
             }
         })

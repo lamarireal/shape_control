@@ -14,8 +14,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
-import com.shackleton.shape.R
 import com.shackleton.shape.app_permissions.PermissionHandler
 import com.shackleton.shape.db.laravel.controller.PostController
 import com.shackleton.shape.databinding.FragmentEvaluaMainBinding
@@ -98,7 +96,6 @@ class EvaluaMainFragment : Fragment() {
         postController.uploadPost(proyect, idea, image) { success ->
             if (success) {
                 Toast.makeText(requireContext(), "Post subido correctamente", Toast.LENGTH_LONG).show()
-                findNavController().navigate(R.id.action_evaluaMainFragment_to_evaluaFragment)
             } else {
                 Toast.makeText(requireContext(), "Hubo un problema al subir el post", Toast.LENGTH_LONG).show()
             }
