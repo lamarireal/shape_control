@@ -22,3 +22,6 @@ class LienzoModelo(
     @SerializedName("n")        var n: String?,
 
     ) : Parcelable
+
+
+// Prueba 1
