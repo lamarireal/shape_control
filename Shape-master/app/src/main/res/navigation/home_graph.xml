@@ -46,6 +46,12 @@
         <action
             android:id="@+id/action_homeFragment_to_retoActivity"
             app:destination="@id/retoActivity" />
+        <action
+            android:id="@+id/action_evaluaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+
+
     </fragment>
 
     <fragment
