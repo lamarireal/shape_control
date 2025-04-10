@@ -244,5 +244,6 @@
     <string name="proyecto">Proyecto</string>
     <string name="todo">TODO</string>
     <string name="siguiente2">Siguiente</string>
+    <string name="accion_tarjeta">accion_tarjeta</string>
 
 </resources>

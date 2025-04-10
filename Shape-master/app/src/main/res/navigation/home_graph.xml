@@ -51,6 +51,9 @@
             app:destination="@id/homeFragment" />
 
 
+        <action
+            android:id="@+id/action_homeFragment_to_gestorFragment"
+            app:destination="@id/gestorFragment" />
 
     </fragment>
 
@@ -215,6 +218,16 @@
         android:label="UserSelectedFragment" >
         <argument android:name="parameter"
             app:argType="string[]" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/gestorFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeFragmentNav.GestorFragment"
+        android:label="Gestor" >
+
     </fragment>
 
 </navigation>
