@@ -104,7 +104,13 @@ class ModuleAdapter(
                 title.text = module.title
                 description.text = module.description
                 button.text = module.button_text
-                Glide.with(imagenReto).load(module.url).into(imagenReto)
+
+                // Mejora en la carga de imagen
+                Glide.with(imagenReto.context)
+                    .load(module.url)
+                    .thumbnail(0.1f)
+                    .into(imagenReto)
+
                 title.setTextColor(textColor)
                 description.setTextColor(textColor)
                 button.setBackgroundColor(btnColor)

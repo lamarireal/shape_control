@@ -145,4 +145,18 @@ class Preferences(context: Context) {
             preferences.edit().putBoolean(PREFERENCES_USER_LIBRO_7, value).apply()
         }
 
+
+
+//guardar datos de las tarjetas
+    var visibleModules: List<Int>
+        get() {
+            val json = preferences.getString("visible_modules", null)
+            return if (json != null) Gson().fromJson(json, Array<Int>::class.java).toList()
+            else emptyList()
+        }
+        set(value) {
+            val json = Gson().toJson(value)
+            preferences.edit().putString("visible_modules", json).apply()
+        }
+
 }
