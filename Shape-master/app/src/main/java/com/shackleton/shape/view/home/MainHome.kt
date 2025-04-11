@@ -182,4 +182,15 @@ class MainHome : AppCompatActivity() {
     fun setBottomNavigationVisibility(visibility: Int) {
         binding.bottomNavigation.visibility = visibility
     }
+
+
+    fun hideToolbar() {
+        binding.toolbar.visibility = View.GONE
+    }
+
+    fun showToolbar() {
+        binding.toolbar.visibility = View.VISIBLE
+    }
+
+
 }

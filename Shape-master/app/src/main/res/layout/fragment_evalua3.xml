@@ -95,7 +95,7 @@
             tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/botonEnviar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cornerRadius="12dp"
