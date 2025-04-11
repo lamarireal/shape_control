@@ -55,6 +55,8 @@
             android:id="@+id/action_homeFragment_to_gestorFragment"
             app:destination="@id/gestorFragment" />
 
+
+
     </fragment>
 
     <fragment
@@ -148,6 +150,18 @@
                 android:id="@+id/action_projectFragment4_to_timelineFragment2"
                 app:destination="@id/timelineFragment2" />
         </fragment>
+
+
+
+
+
+
+
+
+
+
+
+
     <activity
         android:id="@+id/evaluaActivity"
         android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.EvaluaActivity"
@@ -229,5 +243,8 @@
         android:label="Gestor" >
 
     </fragment>
+
+
+
 
 </navigation>
