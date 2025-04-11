@@ -135,6 +135,7 @@ class ProfileFragment : Fragment() {
             findNavController().navigate(ProfileFragmentDirections.actionProfileFragment4ToChangePasswordActivity())
         }
 
+        
         binding.changeFullName.setOnClickListener {
             val builder = AlertDialog.Builder(requireContext())
             builder.setTitle("Cambiar nombre")
