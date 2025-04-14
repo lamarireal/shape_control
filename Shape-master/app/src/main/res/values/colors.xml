@@ -6,4 +6,7 @@
     <color name="gray">#e8e8e8</color>
     <color name="green">#A2F1A5</color>
     <color name="red">#EC6767</color>
+    <color name="colorCorrecto">#A5D6A7</color> <!-- Verde suave -->
+    <color name="colorIncorrecto">#EF9A9A</color> <!-- Rojo suave -->
+
 </resources>

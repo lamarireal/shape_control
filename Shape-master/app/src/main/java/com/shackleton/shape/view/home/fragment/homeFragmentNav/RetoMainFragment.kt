@@ -30,7 +30,8 @@ class RetoMainFragment : Fragment() {
             else Toast.makeText(requireContext(),"Sección en proceso", Toast.LENGTH_SHORT).show()
         }
         binding.arrowBack.setOnClickListener {
-            requireActivity().finish()
+           requireActivity().finish()
+
         }
         binding.arrowLeft.setOnClickListener {
             currentPosition = if (currentPosition > 0) currentPosition - 1 else lista.size - 1
