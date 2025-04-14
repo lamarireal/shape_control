@@ -222,8 +222,18 @@ class PDFController {
             k = k,
             l = l,
             m = m,
-            n= n,
+            n= n
         )
+
+        //Adicion reciente.
+      //  println("📊 Datos de pdfRequest: $pdfRequest")
+// Adición reciente: Imprimir datos antes de enviar la solicitud
+
+        val gson = com.google.gson.Gson()
+        println("📊 JSON enviado: " + gson.toJson(pdfRequest))
+
+
+
         com.shackleton.shape.db.laravel.request.openConnection()
             .create(com.shackleton.shape.db.laravel.request.service.PDFAPI::class.java).editPDFLienzoValidacion(
                 com.shackleton.shape.db.laravel.request.getAuthHeader(),
@@ -238,15 +248,25 @@ class PDFController {
                     callback(true)
 
                 }else{
+
                     callback(false)
-                    println(response.code())
-                    println(response.message())
+                    println("❌ Error en la respuesta del servidor")
+                    println("respuesta del error: "+response.code())
+                    println("mensaje del error: "+response.message())
+
+
+                    // Intenta imprimir el cuerpo de la respuesta (si lo tiene)
+                    val errorBody = response.errorBody()?.string()
+                    println("Cuerpo del error: $errorBody")
+
                 }
             }
+
             override fun onFailure(call: Call<com.shackleton.shape.db.laravel.request.response.GeneralResponse>, t: Throwable) {
                 println(t.message)
 
                 callback(false)
+
             }
         })
     }

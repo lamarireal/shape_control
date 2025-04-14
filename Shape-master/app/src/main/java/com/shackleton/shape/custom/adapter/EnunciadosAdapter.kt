@@ -1,6 +1,7 @@
 package com.shackleton.shape.custom.adapter
 
 import android.app.AlertDialog
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import com.shackleton.shape.databinding.GoalLienzoAdapterBinding
 import com.shackleton.shape.db.laravel.model.LienzoLean
 import com.shackleton.shape.db.laravel.model.LienzoModelo
 import com.shackleton.shape.db.laravel.model.LienzoPropuesta
+import com.shackleton.shape.db.laravel.model.LienzoValidacion
 import com.shackleton.shape.db.laravel.model.LienzoVision
 import com.shackleton.shape.db.laravel.model.Statement
 import com.shackleton.shape.db.laravel.request.getAuthHeader
@@ -29,11 +31,13 @@ import retrofit2.Response
 
 class EnunciadosAdapter(
     private var v: FragmentActivity,
+    //
     var lista: List<Statement>,
     private val view: View,
     private var project_id: Int,
     private var pdf: Int,
-    private val s: String
+    private val s: String,
+    private var contador:Int=1
 ) : RecyclerView.Adapter<EnunciadosAdapter.ViewHolder>() {
 
     private var lastPosition = -1
@@ -50,6 +54,7 @@ class EnunciadosAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
 
         holder.bind(lista[position])
 
@@ -108,8 +113,46 @@ class EnunciadosAdapter(
                 }
             })
 
-            2-> //Falta implementar
-                return
+
+
+            2->
+                //Nota de Pedro: todo esto es una implementación mía.
+
+                 open.getDataFromLienzoValidacion(getAuthHeader(), s)
+            .enqueue(object : Callback<GeneralResponse2<LienzoValidacion>> {
+                override fun onResponse(
+                    call: Call<GeneralResponse2<LienzoValidacion>>,
+                    response: Response<GeneralResponse2<LienzoValidacion>>
+                ) {
+                    if (response.isSuccessful) {
+
+                        Log.d("API_Response", "Datos obtenidos exitosamente: ${response.body()?.data}")
+                        // Procesa los datos...
+                        //He generado una answer para cada línea.
+                        val lienzo = response.body()?.data
+                        lista[0].answer = lienzo?.a.toString()
+                        lista[1].answer = lienzo?.b.toString()
+                        lista[2].answer = lienzo?.c.toString()
+                        lista[3].answer = lienzo?.d.toString()
+                        lista[4].answer = lienzo?.e.toString()
+                        lista[5].answer = lienzo?.f.toString()
+
+
+
+                        //Acuerdate de este cambio.
+
+                    }
+                }
+                override fun onFailure(call: Call<GeneralResponse2<LienzoValidacion>>, t: Throwable) {
+
+                    Log.e("API_Failure", "Error en la comunicación con la API: ${t.message}")
+                    println("Error: ${t.message}")
+                }
+            })
+
+
+
+
             3->open.getDataFromLienzoPropuesta(getAuthHeader(),s).enqueue(object :Callback<GeneralResponse2<LienzoPropuesta>>{
                 override fun onResponse(
                     call: Call<GeneralResponse2<LienzoPropuesta>>,
@@ -158,8 +201,19 @@ class EnunciadosAdapter(
             })
         }
 
+
+
+
+
+
+
         if (position == lista.size - 1) {
             holder.binding.ln.visibility = View.VISIBLE
+            //Lo he modificado para que aparezca abajo.
+            holder.binding.btnAniadir.visibility=View.VISIBLE
+            holder.binding.btnAniadir.setOnClickListener {
+                agregarMasStatements()
+            }
             holder.binding.guardarCambios.setOnClickListener {
                 when (pdf) {
                     0 -> editPDF.editPDFLienzoModelo(v,
@@ -207,12 +261,14 @@ class EnunciadosAdapter(
                     }
 
                     2 ->//falta especificar
+                        //He incluido un elemento más a la tabla para comprobar si afecta a la
+                        //Introducción de statements.
                         editPDF.editPDFLienzoValidacion(v,
                             project_id, lista[0].answer, lista[1].answer,
-                            lista[2].answer, lista[3].answer, null,
+                            lista[2].answer, lista[3].answer, lista[4].answer,
+                            lista[5].answer, lista[6].answer, null,
                             null, null, null,
-                            null, null, null,
-                            null, null, null
+                            null, null,null
                         ) {
                             if (it) {
                                 Toast.makeText(
@@ -276,8 +332,15 @@ class EnunciadosAdapter(
 
 
             }
+        }else{
+
+                // Ocultar los botones en todas las demás posiciones
+                holder.binding.ln.visibility = View.GONE
+                holder.binding.btnAniadir.visibility = View.GONE
+
         }
 
+        //Aqui esta el setOnclickListener para el boton añadir respuesta.
         holder.binding.btnRespuesta.setOnClickListener {
             showAlertDialog(lista, holder.binding.enuncioado.text.toString(), position)
         }
@@ -291,6 +354,25 @@ class EnunciadosAdapter(
             notifyItemChanged(holder.bindingAdapterPosition)
         }
 
+    }
+//Aquí esta el boton.
+    private fun agregarMasStatements() {
+        // Agregar 6 nuevos Statements vacíos
+        contador++
+        val nuevosStatements = listOf (
+            Statement("Experimento ${contador} :clientes", "",false),
+            Statement("Experimento ${contador} :dolor", "",false),
+            Statement("Experimento ${contador} :solución", "",false),
+            Statement("Experimento ${contador} :resultado", "",false),
+            Statement("Experimento ${contador} :aprendizaje", "",false),
+            Statement("Experimento ${contador} :decisión", "",false)
+    )
+
+
+        lista = lista + nuevosStatements
+
+
+        notifyDataSetChanged() // Actualiza el RecyclerView
     }
 
     override fun getItemCount(): Int = lista.size
@@ -311,7 +393,7 @@ class EnunciadosAdapter(
             }
         }
     }
-
+//Aquí está el showAlertDialog
     private fun showAlertDialog(lista: List<Statement>, statement: String, position: Int) {
         val builder = AlertDialog.Builder(view.context)
         val input = EditText(view.context)

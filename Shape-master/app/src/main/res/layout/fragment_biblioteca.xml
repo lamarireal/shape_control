@@ -15,10 +15,10 @@
 
         <Button
             android:id="@+id/arrow_back"
-            android:layout_width="50dp"
-            android:layout_height="30dp"
-            android:layout_margin="10dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:layout_margin="10dp"
             android:backgroundTint="@color/gray"
             android:contentDescription=""
             android:drawableLeft="@drawable/arrow_back_black"
