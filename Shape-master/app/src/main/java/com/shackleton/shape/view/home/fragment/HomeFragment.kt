@@ -22,10 +22,7 @@ class HomeFragment : Fragment() {
     private val viewModel: ModuleViewModel by activityViewModels()
     private lateinit var adapter: ModuleAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         (activity as? MainHome)?.setBottomNavigationVisibility(View.VISIBLE)
 

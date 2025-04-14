@@ -155,7 +155,7 @@
     <string name="title_activity_biblioteca_main">BibliotecaMainActivity</string>
 
     <!-- Subvenciones -->
-    <string name="emprendedorTitle">Premio Emprendedor 2023</string>
+    <string name="emprendedorTitle">Premio Emprendedor Del Año</string>
     <string name="emprendedorDescription">Bienvenidas las ideas en desarrollo y en etapa de crecimiento.</string>
     <string name="innovacionTitle">Premios Innovación Social</string>
     <string name="innovacionDescription">Si tienes un ADN social, participa con tu idea y ayuda al mundo.</string>
