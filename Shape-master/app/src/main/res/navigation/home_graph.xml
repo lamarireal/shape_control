@@ -46,6 +46,17 @@
         <action
             android:id="@+id/action_homeFragment_to_retoActivity"
             app:destination="@id/retoActivity" />
+        <action
+            android:id="@+id/action_evaluaFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+
+        <action
+            android:id="@+id/action_homeFragment_to_gestorFragment"
+            app:destination="@id/gestorFragment" />
+
+
+
     </fragment>
 
     <fragment
@@ -139,6 +150,18 @@
                 android:id="@+id/action_projectFragment4_to_timelineFragment2"
                 app:destination="@id/timelineFragment2" />
         </fragment>
+
+
+
+
+
+
+
+
+
+
+
+
     <activity
         android:id="@+id/evaluaActivity"
         android:name="com.shackleton.shape.view.home.fragment.homeActivityNav.EvaluaActivity"
@@ -210,5 +233,18 @@
         <argument android:name="parameter"
             app:argType="string[]" />
     </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/gestorFragment"
+        android:name="com.shackleton.shape.view.home.fragment.homeFragmentNav.GestorFragment"
+        android:label="Gestor" >
+
+    </fragment>
+
+
+
 
 </navigation>
