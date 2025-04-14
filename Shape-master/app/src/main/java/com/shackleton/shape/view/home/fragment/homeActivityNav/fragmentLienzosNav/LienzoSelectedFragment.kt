@@ -82,6 +82,7 @@ class LienzoSelectedFragment : Fragment() {
         coroutineScope.cancel()
     }
 
+    //Esto carga distintos lienzos segun la posicion.
     private fun statementCanvas() {
 
         when (args.parameters[2].toInt()) {
@@ -166,10 +167,14 @@ class LienzoSelectedFragment : Fragment() {
     private fun loadStatementLienzoValidacion(): List<Statement> {
         return listOf(
 
-            Statement("experimento", "", false),
-
-
+            Statement("Experimento:clientes", "", false),
+            Statement("Experimento:dolor", "", false),
+            Statement("Experimento:solución", "", false),
+            Statement("Experimento:resultado", "", false),
+            Statement("Experimento:aprendizaje", "", false),
+            Statement("Experimento:decisión", "", false),
             )
+
     }
     private fun loadStatementLienzoPropuesta(): List<Statement> {
         return listOf(
@@ -210,6 +215,7 @@ class LienzoSelectedFragment : Fragment() {
 
     private fun canvasSelected(pos: String): String {
         return when (pos) {
+            //nc s
             "0" -> "lienzos_pdfs/modelo_de_negocio.pdf"
             "1" -> "lienzos_pdfs/lienzo_vision.pdf"
             "2" -> "lienzos_pdfs/lienzo_validacion_ligera.pdf"

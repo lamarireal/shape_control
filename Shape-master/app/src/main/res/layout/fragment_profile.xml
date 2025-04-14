@@ -8,12 +8,22 @@
     android:gravity="center"
     android:orientation="vertical">
 
+
     <LinearLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/white"
+            android:contentDescription="atr"
+            android:src="@drawable/arrow_back_black" />
 
         <LinearLayout
             android:id="@+id/constraintPerfil"
@@ -64,6 +74,8 @@
                     android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="5dp">
+
+
 
                     <TextView
                         android:id="@+id/numeroSeguidores"

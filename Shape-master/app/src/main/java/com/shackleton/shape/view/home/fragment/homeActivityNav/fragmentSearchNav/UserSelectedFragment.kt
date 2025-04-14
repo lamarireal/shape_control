@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.shackleton.shape.custom.adapter.PostAdapter
 import com.shackleton.shape.databinding.FragmentUserSelectedBinding
@@ -17,6 +20,7 @@ import com.shackleton.shape.db.laravel.request.response.GeneralResponse
 import com.shackleton.shape.db.laravel.request.response.GeneralResponse2
 import com.shackleton.shape.db.laravel.request.service.PostAPI
 import com.shackleton.shape.db.laravel.request.service.UserApi
+import com.shackleton.shape.shared.SharedApp
 import com.shackleton.shape.view.home.MainHome
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -47,6 +51,16 @@ class UserSelectedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         isFollowing()
+
+        val arrowBack:ImageButton=binding.arrowback
+
+        arrowBack.setOnClickListener(View.OnClickListener {
+
+            findNavController().popBackStack()
+
+
+        })
+
 
         openConnection().create(UserApi::class.java).getUserByNick(args.parameter[0])
             .enqueue(object : Callback<GeneralResponse2<User>> {
@@ -89,12 +103,25 @@ class UserSelectedFragment : Fragment() {
         binding.btnSeguir.setOnClickListener {
 
             with(binding){
+
+
+
                 if (btnSeguir.text ==  "SEGUIR"){
-                    var s = numeroSeguidores.text.toString().toInt()
-                    s+=1
-                    numeroSeguidores.text = s.toString()
-                    follow()
-                    btnSeguir.text = "DEJAR DE SEGUIR"
+
+
+                    //Esta es una implementación mía.
+                    if(binding.titleUserNick.text.toString()==SharedApp.preferences.user.nick){
+                        btnSeguir.isEnabled
+
+                    }
+
+                    else {
+                        var s = numeroSeguidores.text.toString().toInt()
+                        s += 1
+                        numeroSeguidores.text = s.toString()
+                        follow()
+                        btnSeguir.text = "DEJAR DE SEGUIR"
+                    }
                 }else{
                     var s = numeroSeguidores.text.toString().toInt()
                     s-=1

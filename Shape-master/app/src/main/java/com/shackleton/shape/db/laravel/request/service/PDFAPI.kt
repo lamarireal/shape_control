@@ -3,6 +3,7 @@ package com.shackleton.shape.db.laravel.request.service
 import com.shackleton.shape.db.laravel.model.LienzoLean
 import com.shackleton.shape.db.laravel.model.LienzoModelo
 import com.shackleton.shape.db.laravel.model.LienzoPropuesta
+import com.shackleton.shape.db.laravel.model.LienzoValidacion
 import com.shackleton.shape.db.laravel.model.LienzoVision
 import com.shackleton.shape.db.laravel.request.modelRequest.Modelos
 import com.shackleton.shape.db.laravel.request.response.GeneralResponse
@@ -39,7 +40,11 @@ interface PDFAPI {
     @POST("api/getDataFromLienzoModelo")
     fun getDataFromLienzoModelo(@Header("Authorization") token: String, @Field("project_name") project_name : String ) : Call<GeneralResponse2<LienzoModelo>>
 
-    //@POST("api/getDataFromLienzoValidacion")
-    //fun getDataFromLienzoValidacion(@Header("Authorization") token: String,  @Field("project_name") project_name : String  ) : Call<GeneralResponse2<LienzoLean>>
+    //Nota Pedro: Aquí esta el que nos quedaba.Esto antes estaba comentado.
+
+    @FormUrlEncoded
+   @POST("api/getDataFromLienzoValidacion")
+    fun getDataFromLienzoValidacion(@Header("Authorization") token: String,  @Field("project_name") project_name : String  )
+    : Call<GeneralResponse2<LienzoValidacion>>
 
 }

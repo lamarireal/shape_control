@@ -2,20 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_height="wrap_content"
-    >
+    android:gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:background="@drawable/round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/round"
+        android:elevation="1dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_margin="5dp"
-        android:elevation="1dp"
         android:padding="10dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,20 +26,19 @@
                 android:id="@+id/enuncioado"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:text="@string/nombre_del_enunciado"
                 android:layout_weight="1"
                 android:gravity="center"
-                />
+                android:text="@string/nombre_del_enunciado"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/downLetAnswer"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/white"
                 android:layout_gravity="end"
+                android:backgroundTint="@color/white"
                 android:contentDescription="@string/bajar"
                 android:scaleType="centerCrop"
                 android:src="@drawable/down"
@@ -51,44 +50,54 @@
             android:id="@+id/mainContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
-                android:layout_marginTop="5dp"
                 android:id="@+id/btnRespuesta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/a_adir_respuesta"/>
+                android:layout_marginTop="5dp"
+                android:text="@string/a_adir_respuesta" />
 
             <TextView
-                android:padding="5dp"
                 android:id="@+id/contenedorRespuesta"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:padding="5dp" />
         </LinearLayout>
 
     </LinearLayout>
-
 
 
     <LinearLayout
         android:id="@+id/ln"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:gravity="center"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="40dp"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!--Nota de Pedro:He cambiado la orientacion-->
 
         <Button
             android:id="@+id/guardarCambios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAllCaps="false"
             android:backgroundTint="@color/blue"
-            android:text="@string/guardar_cambios"/>
+            android:text="@string/guardar_cambios"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnAniadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="Añadir 6 más"
+            android:visibility="gone" />
+
 
     </LinearLayout>
 

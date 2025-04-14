@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.shackleton.shape.R
 import com.shackleton.shape.custom.adapter.BibliotecaAdapter
@@ -24,6 +25,14 @@ class BibliotecaFragment : Fragment() , BibliotecaAdapter.OnItemClickListener {
 
         binding.recyclerBiblioteca.adapter = BibliotecaAdapter(cargar, listener = this)
 
+
+        //Nota de Pedro:El onclickListener no funcionaba porque no estaba dentro del view.
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+
+
         return binding.root
     }
 
@@ -32,6 +41,7 @@ class BibliotecaFragment : Fragment() , BibliotecaAdapter.OnItemClickListener {
         findNavController().navigate(BibliotecaFragmentDirections.actionBibliotecaFragment2ToLibrosFragment(resumen = arrayOf(biblioteca.title,biblioteca.resumen,biblioteca.url)))
 
     }
+
 
     private fun cargarList(): List<Biblioteca> {
         return listOf(

@@ -14,12 +14,12 @@ class Modelos {
         @Field("f") val f: String?,
         @Field("g") val g: String?,
         @Field("h") val h: String?,
-        @Field("i") val i: String?,
         @Field("j") val j: String?,
+        @Field("i") val i: String?,
         @Field("k") val k: String?,
         @Field("l") val l: String?,
         @Field("m") val m: String?,
-        @Field("n") val n: String?,
+        @Field("n") val n: String?
 
     )
 

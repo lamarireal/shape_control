@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.ui.graphics.Color
 import androidx.core.widget.NestedScrollView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -44,11 +45,16 @@ class PreguntasAdapter(
                             lista[3].respuestaSeleccionada == lista[3].respuesta2 &&
                             lista[4].respuestaSeleccionada == lista[4].respuesta1
                         ) {
+
                             SharedApp.preferences.libro1 = true
                             Toast.makeText(context,"Esta bien", Toast.LENGTH_SHORT).show()
                             Navigation.findNavController(lista1).navigate(PreguntasFragmentDirections.actionPreguntasFragmentToBibliotecaFragment2())
                         }else{
+
                             Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                            lista.forEach { it.mostrarResultado = true }
+                            notifyDataSetChanged()
+
                         }
 
                     2 -> if (lista[0].respuestaSeleccionada == lista[0].respuesta2 &&
@@ -63,6 +69,8 @@ class PreguntasAdapter(
 
                     }else{
                         Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                        lista.forEach { it.mostrarResultado = true }
+                        notifyDataSetChanged()
                     }
 
                     3 -> if (lista[0].respuestaSeleccionada == lista[0].respuesta3 &&
@@ -77,6 +85,8 @@ class PreguntasAdapter(
 
                     }else{
                         Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                        lista.forEach { it.mostrarResultado = true }
+                        notifyDataSetChanged()
                     }
 
                     4 -> if (lista[0].respuestaSeleccionada == lista[0].respuesta1 &&
@@ -91,6 +101,8 @@ class PreguntasAdapter(
 
                     }else{
                         Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                        lista.forEach { it.mostrarResultado = true }
+                        notifyDataSetChanged()
                     }
 
                     5 -> if (lista[0].respuestaSeleccionada == lista[0].respuesta2 &&
@@ -106,6 +118,8 @@ class PreguntasAdapter(
                     }
                     else{
                         Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                        lista.forEach { it.mostrarResultado = true }
+                        notifyDataSetChanged()
                     }
 
                     6 -> if (lista[0].respuestaSeleccionada == lista[0].respuesta1 &&
@@ -120,6 +134,8 @@ class PreguntasAdapter(
 
                     }else{
                         Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                        lista.forEach { it.mostrarResultado = true }
+                        notifyDataSetChanged()
                     }
 
                     7 -> if (lista[0].respuestaSeleccionada == lista[0].respuesta2 &&
@@ -133,6 +149,8 @@ class PreguntasAdapter(
                         Navigation.findNavController(lista1).navigate(PreguntasFragmentDirections.actionPreguntasFragmentToBibliotecaFragment2())
                     }else{
                         Toast.makeText(context,"No esta bien", Toast.LENGTH_SHORT).show()
+                        lista.forEach { it.mostrarResultado = true }
+                        notifyDataSetChanged()
                     }
                 }
             }
@@ -148,7 +166,7 @@ class PreguntasAdapter(
         fun bind(
             item: PreguntasFragment.PreguntaClass,
             position: Int,
-            lista: List<PreguntasFragment.PreguntaClass>,
+            lista: List<PreguntasFragment.PreguntaClass>
         ) {
             with(binding) {
                 questionTextView.text = item.pregunta
@@ -156,22 +174,57 @@ class PreguntasAdapter(
                 answer2RadioButton.text = item.respuesta2
                 answer3RadioButton.text = item.respuesta3
 
-                answer1RadioButton.setOnCheckedChangeListener { _, isChecked ->
-                    if (isChecked) {
-                        lista[position].respuestaSeleccionada = item.respuesta1
+                // Resetear selección
+                answer1RadioButton.isChecked = item.respuestaSeleccionada == item.respuesta1
+                answer2RadioButton.isChecked = item.respuestaSeleccionada == item.respuesta2
+                answer3RadioButton.isChecked = item.respuestaSeleccionada == item.respuesta3
+
+                // Desactivar interacción si ya se mostró resultado
+                val deshabilitar = item.mostrarResultado
+                answer1RadioButton.isEnabled = !deshabilitar
+                answer2RadioButton.isEnabled = !deshabilitar
+                answer3RadioButton.isEnabled = !deshabilitar
+
+                // Limpiar colores por defecto
+                val defaultColor = itemView.context.getColor(R.color.white)
+                answer1RadioButton.setBackgroundColor(defaultColor)
+                answer2RadioButton.setBackgroundColor(defaultColor)
+                answer3RadioButton.setBackgroundColor(defaultColor)
+
+                // Pintar resultado si ya se envió
+                if (item.mostrarResultado) {
+                    val verde = itemView.context.getColor(R.color.colorCorrecto)
+                    val rojo = itemView.context.getColor(R.color.colorIncorrecto)
+
+                    val botones = listOf(
+                        answer1RadioButton to item.respuesta1,
+                        answer2RadioButton to item.respuesta2,
+                        answer3RadioButton to item.respuesta3
+                    )
+
+                    for ((boton, texto) in botones) {
+                        if (texto == item.respuestaSeleccionada) {
+                            if (texto == item.respuestaCorrecta) {
+                                boton.setBackgroundColor(verde)
+                            } else {
+                                boton.setBackgroundColor(rojo)
+                            }
+                        }
                     }
+                }
+
+                // Control de selección
+                answer1RadioButton.setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked) lista[position].respuestaSeleccionada = item.respuesta1
                 }
                 answer2RadioButton.setOnCheckedChangeListener { _, isChecked ->
-                    if (isChecked) {
-                        lista[position].respuestaSeleccionada = item.respuesta2
-                    }
+                    if (isChecked) lista[position].respuestaSeleccionada = item.respuesta2
                 }
                 answer3RadioButton.setOnCheckedChangeListener { _, isChecked ->
-                    if (isChecked) {
-                        lista[position].respuestaSeleccionada = item.respuesta3
-                    }
+                    if (isChecked) lista[position].respuestaSeleccionada = item.respuesta3
                 }
             }
         }
+
     }
 }
