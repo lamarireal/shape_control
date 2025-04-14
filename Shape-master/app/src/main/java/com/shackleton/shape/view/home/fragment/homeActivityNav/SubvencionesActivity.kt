@@ -1,9 +1,9 @@
 package com.shackleton.shape.view.home.fragment.homeActivityNav
 
+import SubvencionesAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.shackleton.shape.R
-import com.shackleton.shape.custom.adapter.SubvencionesAdapter
 import com.shackleton.shape.databinding.ActivitySubvencionesBinding
 import com.shackleton.shape.db.laravel.model.Subvenciones
 
@@ -17,8 +17,6 @@ class SubvencionesActivity : AppCompatActivity() {
         binding.arrowBack.setOnClickListener {
             finish() // Cierra la actividad y vuelve a la anterior
         }
-
-
 
         binding.recyclerSubvenciones.adapter = SubvencionesAdapter(cargarList())
 

@@ -16,7 +16,7 @@ class ModuleViewModel : ViewModel() {
             Module(4, "Herramientas", "Tus herramientas personales", "Abrir herramientas", "https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0", true),
             Module(5, "Networking", "Conecta con otros", "Ir a networking", "https://images.unsplash.com/photo-1542744173-8e7e53415bb0", true),
             Module(6, "Lienzos", "Herramienta para crear", "Ver lienzos", "https://images.unsplash.com/photo-1522542550221-31fd19575a2d", true),
-            Module(7, "Mindfullness", "Meditación y concentración", "Practicar", "https://images.unsplash.com/photo-1621090483697-29b32b735a73", true),
+            Module(7, "Concéntrate y logra tu objetivo", "Meditación y concentración", "Practicar", "https://images.unsplash.com/photo-1621090483697-29b32b735a73", true),
             Module(8, "Subvenciones", "Información de ayudas", "Ver subvenciones", "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f", true)
         )
 
