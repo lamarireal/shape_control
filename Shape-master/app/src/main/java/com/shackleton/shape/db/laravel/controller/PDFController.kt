@@ -128,6 +128,12 @@ class PDFController {
             m = m,
             n= n,
         )
+
+        //Adición reciente.
+        val gson = com.google.gson.Gson()
+        println("📊 JSON enviado: " + gson.toJson(pdfRequest))
+
+
         com.shackleton.shape.db.laravel.request.openConnection()
             .create(com.shackleton.shape.db.laravel.request.service.PDFAPI::class.java).editPDFLienzoPropuestas(
                 com.shackleton.shape.db.laravel.request.getAuthHeader(),

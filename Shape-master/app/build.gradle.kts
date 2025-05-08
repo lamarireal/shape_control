@@ -84,4 +84,6 @@ dependencies {
 
     // PDF Viewer
     // implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
+
+    //com.github.barteksc:android-pdf-viewer:3.2.0-beta.1
 }
