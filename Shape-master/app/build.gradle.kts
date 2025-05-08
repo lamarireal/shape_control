@@ -84,6 +84,11 @@ dependencies {
 
     // PDF Viewer
     // implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
-    implementation("com.google.android.material:material:1.11.0")
+    // implementation("com.google.android.material:material:1.11.0")
+    // implementation ("androidx.pdf:pdf-viewer-fragment:1.0.0-alpha08")
+
+
+
+
 
 }
